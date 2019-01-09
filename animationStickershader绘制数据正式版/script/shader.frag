@@ -36,6 +36,8 @@
  
  ----------------------------------------------
  */
+precision highp float;
+
 vec2 globalvtexCoord;
 
 void ledRectChar(int,float,float,float,float,out vec4);
@@ -48,7 +50,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     fragColor = vec4(.1,.1,.1,1);
 
     globalvtexCoord = fragCoord/iResolution.x;
-    showFloat(float(100.1112),fragColor);
+    showFloat(float(0.4),fragColor);
     //  fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 
@@ -56,7 +58,7 @@ void showFloat(float f,out vec4 fragColor){
     int myNum[20];
     int k = 0;
     int iPart = int(floor(abs(f))); //整数部分
-    int fPart = int(fract(abs(f))*10000.0); //小数部分 4位 fract:1.8-->0.8 注意*100000会出问题
+    int fPart = int(fract(abs(f))*10000.0); //小数部分 4位 fract:1.8-->0.8 注意0.4*100000会出问题
     float m=0.86; //绘制开始的x坐标
     
     // 初始化数组,全部置为代表黑色清空的12,注意：负数为11，小数点为10
