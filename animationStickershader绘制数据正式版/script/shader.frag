@@ -36,10 +36,8 @@
  
  ----------------------------------------------
  */
+vec2 globalvtexCoord;
 
-//float x = v_texCoord.x;
-//float y = v_texCoord.y;
-//
 void ledRectChar(int,float,float,float,float,out vec4);
 bool inRect(float,float,float,float);
 void showFloat(float,out vec4);
@@ -48,7 +46,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // 默认全部设置为黑色
     fragColor = vec4(.1,.1,.1,1);
-    showFloat(float(iMouse.w),fragColor);
+    globalvtexCoord = fragCoord/iResolution.x;
+    showFloat(float(100.1112),fragColor);
     //  fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 
