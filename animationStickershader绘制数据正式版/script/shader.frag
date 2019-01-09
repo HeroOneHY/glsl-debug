@@ -96,7 +96,7 @@ void showFloat(float f,out vec4 fragColor){
 }
 
 bool inRect(float x1,float x2, float y1, float y2){
-    if(v_texCoord.x>x1 && v_texCoord.x<x2 && v_texCoord.y>y1 && v_texCoord.y<y2) {
+    if(globalvtexCoord.x>x1 && globalvtexCoord.x<x2 && globalvtexCoord.y>y1 && globalvtexCoord.y<y2) {
         return true;
     } else {
         return false;
@@ -116,7 +116,7 @@ void ledRectChar(int n, float xa,float xb, float ya, float yb,out vec4 fragColor
     int num = n;
 
     // 设定调试区显示范围
-    if(v_texCoord.x >= x1 && v_texCoord.x <= x2 && v_texCoord.y >= y1 && v_texCoord.y <= y2) {
+    if(globalvtexCoord.x >= x1 && globalvtexCoord.x <= x2 && globalvtexCoord.y >= y1 && globalvtexCoord.y <= y2) {
         // 设置调试区背景色为绿色
         fragColor = vec4(0.2,1.0,0.2,1.0);
         // 分别绘制出 LED 形式的数字 1~0 , 用黑色绘制1个或2个矩形,由矩形以外的绿色区域组成字型
