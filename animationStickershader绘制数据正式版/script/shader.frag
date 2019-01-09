@@ -48,7 +48,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
     // 默认全部设置为黑色
     fragColor = vec4(.1,.1,.1,1);
-    showFloat(float(iMouse.w),fragColor);
+    int value = int(fract(0.4)*10000.0);
+    showFloat(float(100.4),fragColor);
     //  fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 
@@ -56,7 +57,7 @@ void showFloat(float f,out vec4 fragColor){
     int myNum[20];
     int k = 0;
     int iPart = int(floor(abs(f))); //整数部分
-    int fPart = int(fract(abs(f))*100000.0); //小数部分 5位
+    int fPart = int(fract(abs(f))*10000.0); //小数部分 4位 fract:1.8-->0.8 注意*100000会出问题
     float m=0.86; //绘制开始的x坐标
     
     // 初始化数组,全部置为代表黑色清空的12,注意：负数为11，小数点为10
