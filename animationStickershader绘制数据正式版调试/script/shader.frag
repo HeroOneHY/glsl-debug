@@ -50,7 +50,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     fragColor = vec4(.1,.1,.1,1);
     vec2 test = vec2(3.0,4.0);
     globalvtexCoord = fragCoord/iResolution.x;
-    showFloat(length(test),fragColor);
+  //  showFloat(length(test),fragColor); length为向量的长度(test为(0,0)到(3.4)的向量)
+    showFloat(smoothstep(1.0,2.0,iGlobalTime),fragColor);
     //  fragColor = vec4(1.0, 0.0, 0.0, 1.0);
 }
 
